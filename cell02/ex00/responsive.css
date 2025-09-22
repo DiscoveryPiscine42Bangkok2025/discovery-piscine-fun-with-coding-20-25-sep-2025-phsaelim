@@ -1,0 +1,20 @@
+html, body { height: 100%; margin: 0; }
+        table , th , td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100vw;
+            height: 100vh;
+            
+        }
+
+        td{
+            text-align: left;
+            padding: 5px;
+            font-size: clamp(14px, 2.5vw, 32px);
+        }
+        .cell1{
+            background-color: rgb(195, 199, 126)
+        }
+        .cell2{
+            background-color: rgba(249, 196, 175, 1);
+        }
