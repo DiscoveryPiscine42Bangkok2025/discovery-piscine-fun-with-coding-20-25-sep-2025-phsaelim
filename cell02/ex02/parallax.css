@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.parallax {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px black;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg1 {
+    background-image: url("https://media.istockphoto.com/id/1212177973/photo/cute-brown-mexican-chihuahua-dog-isolated-on-light-pink-background-outraged-unhappy-dog-looks.jpg?s=612x612&w=0&k=20&c=6Zhtntv9qyZHvqbnw7-YpWDqgWRgbWC5OlSrYtEb5iE=");
+}
+
+.bg2 {
+    background-image: url("https://cdn.wallpapersafari.com/31/51/Is1fYV.jpg");
+}
+
+.section.black {
+    background: black;
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+}
