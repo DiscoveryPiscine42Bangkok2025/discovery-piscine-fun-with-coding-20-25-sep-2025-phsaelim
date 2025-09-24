@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing">
+  <main class="wrap">
+    <h1 class="landing-title">Select Profile</h1>
+    <section class="grid">
+      <a class="card" href="person1.html">
+        <img class="thumb" src="resource/pfp1.jpg" alt="maxpfp">
+        <div class="body">
+          <h2 class="title">Max</h2>
+        </div>
+      </a>
+
+      <a class="card" href="person2.html">
+        <img class="thumb" src="resource/pfp2.jpg" alt="gamepfp">
+        <div class="body">
+          <h2 class="title">Game</h2>
+        </div>
+      </a>
+    </section>
+  </main>
+  
+
+  
+<div id="loader" aria-hidden="true">
+  <div class="loader-spinner" aria-label="Loading"></div>
+</div>
+
+<script>
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('page-enter');
+    requestAnimationFrame(() => {
+      document.body.classList.add('page-entered');
+    });
+  });
+
+  
+  const cards = document.querySelectorAll('.grid .card');
+  const loader = document.getElementById('loader');
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const url = card.getAttribute('href');
+
+      
+      card.classList.add('loading');
+      document.body.classList.add('leaving');
+      loader.classList.add('show');
+
+      
+      setTimeout(() => { window.location.href = url; }, 450);
+    });
+  });
+</script>
+
+</body>
+</html>
