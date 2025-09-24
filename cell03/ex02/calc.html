@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column; /* จัดแนวตั้ง */
+      justify-content: center; /* จัดกลางแนวตั้ง */
+      align-items: center; /* จัดกลางแนวนอน */
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .calc-container {
+      display: flex;              /* จัดแนวนอน */
+      justify-content: center;    /* จัดตรงกลาง */
+      align-items: center;        /* จัดกลางแนวตั้ง */
+      gap: 10px;                  /* เว้นช่องระหว่างกัน */
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Basic Calculator</h1>
+
+  <div class="calc-container">
+    <input type="number" id="left" placeholder="Left number" min="0">
+    <select id="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="number" id="right" placeholder="Right number" min="0">
+    <input type="submit" value="Try me!" onclick="calculate()">
+  </div>
+
+  <script>
+    function calculate() {
+      let left = document.getElementById("left").value;
+      let right = document.getElementById("right").value;
+      let op = document.getElementById("operator").value;
+
+      if (left === "" || right === "" || left < 0 || right < 0) {
+        alert("Error :(");
+        return;
+      }
+
+      left = parseInt(left);
+      right = parseInt(right);
+      let result;
+
+      if ((op === "/" || op === "%") && right === 0) {
+        alert("It's over 9000!");
+        console.log("It's over 9000!");
+        return;
+      }
+
+      switch(op) {
+        case "+": result = left + right; break;
+        case "-": result = left - right; break;
+        case "*": result = left * right; break;
+        case "/": result = left / right; break;
+        case "%": result = left % right; break;
+      }
+
+      alert(result);
+      console.log(result);
+    }
+
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+</body>
+</html>
